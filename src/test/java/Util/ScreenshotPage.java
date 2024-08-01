@@ -2,6 +2,7 @@ package Util;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -20,12 +21,12 @@ public class ScreenshotPage {
 
 	
 	public String takescreenshotFile() throws Exception {
-		File SrcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+	//	File SrcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		File filename = new File("screenshot_" + "_" + timestamp() + "" + extension);
 		Thread.sleep(2000);
 		String filepath = ConstantsPage.screenshot_path + filename;
 		File DestFile = new File(filepath);
-		FileUtils.copyFile(SrcFile, DestFile);
+	//	FileUtils.copyFile(SrcFile, DestFile);
 		return filepath;
 	}
 

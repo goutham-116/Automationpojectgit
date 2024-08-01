@@ -12,7 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
+//import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -116,9 +116,9 @@ public class NYNewHirePage
 
 	public void Login(String FEIN, String Password, String gp_company) throws Exception {
 		try {
-			WebDriverWait wt = new WebDriverWait(driver, 60);
+	//		WebDriverWait wt = new WebDriverWait(driver, 60);
 			driver.navigate().refresh();
-			wt.until(ExpectedConditions.visibilityOf(FEINnumber));
+	//		wt.until(ExpectedConditions.visibilityOf(FEINnumber));
 			Thread.sleep(5000);
 			FEINnumber.sendKeys(FEIN);
 			Thread.sleep(5000);
@@ -156,9 +156,9 @@ public class NYNewHirePage
 		ArrayList<String> allUsersList = DBUtilPage.NYHireData(gp_company, state);
 		ScreenshotPage scp = new ScreenshotPage(driver);
 
-		WebDriverWait wt = new WebDriverWait(driver, 60);
+	//	WebDriverWait wt = new WebDriverWait(driver, 60);
 		try {
-			wt.until(ExpectedConditions.visibilityOf(NewHiredEmpbtn));
+	//		wt.until(ExpectedConditions.visibilityOf(NewHiredEmpbtn));
 			if (allUsersList.size() > 0) {
 				System.out.println("No of records to scrape:" + allUsersList.size());
 				WriteTextUtil.log("No of records to scrape:" + allUsersList.size());
@@ -203,7 +203,7 @@ public class NYNewHirePage
 					NewHiredEmpbtn.click();
 					System.out.println("NewHiredEmployee button clicked successfully");
 					WriteTextUtil.log("NewHiredEmployee button clicked successfully");
-					wt.until(ExpectedConditions.visibilityOf(ssntxtbox));
+		//			wt.until(ExpectedConditions.visibilityOf(ssntxtbox));
 					Thread.sleep(5000);
 
 					ssntxtbox.sendKeys(ssn_With_out);
@@ -319,8 +319,8 @@ public class NYNewHirePage
 		try {
 			Actions act = new Actions(driver);
 			act.moveToElement(tempdown).build().perform();
-			WebDriverWait wt = new WebDriverWait(driver, 60);
-			wt.until(ExpectedConditions.elementToBeClickable(logout));
+	//		WebDriverWait wt = new WebDriverWait(driver, 60);
+	//		wt.until(ExpectedConditions.elementToBeClickable(logout));
 			logout.click();
 			System.out.println("Logout successfully");
 			WriteTextUtil.log("Logout successfully");

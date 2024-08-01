@@ -3,11 +3,17 @@ package Test;
 import java.util.ArrayList;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import Pages.NYNewHirePage;
+import Util.ConstantsPage;
 import Util.DBUtilPage;
 import Util.ScreenshotPage;
+import Util.SendExceptionMailPage;
+import Util.WriteTextUtil;
 
 
 public class NYNewHireTest {
@@ -85,9 +91,9 @@ public class NYNewHireTest {
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println("Unable to get the driver");
-			WriteTextUtil.log("Unable to get the driver");
-			SendExceptionMailPage.sendEmail(ConstantsPage.from, ConstantsPage.to, ConstantsPage.subject,
-					e.getMessage());
+		//	WriteTextUtil.log("Unable to get the driver");
+		//	SendExceptionMailPage.sendEmail(ConstantsPage.from, ConstantsPage.to, ConstantsPage.subject,
+		//			e.getMessage());
 		}
 
 	}
